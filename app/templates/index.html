@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <script type="text/javascript" charset="utf-8" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+	<script type="text/javascript" src="http://explorercanvas.googlecode.com/svn/tags/m3/excanvas.compiled.js"></script>
+	<title>SMOLGU. ColorLab</title>
+	<style type="text/css" media="screen">
+	 .colorpicker {
+	   float: left;
+	   margin: 1em;
+	 }
+	 form {
+	   margin: 2em 1em 0 1;
+	   text-align: left;
+	 }
+	 body {
+	   font-family: "Helvetica Neue", "Helvetica", "Arial",sans-serif;
+	   display: block;
+	   margin: 8px;
+	 }
+	 p {
+	   clear: both;
+	 }
+  button.t1 {
+ background-color: #808080;
+ border: 2px solid #ffffff;
+ color: #ffffff;
+ padding: 12px 42px;
+ border-radius: 10px;
+ font-size: 17px;
+}
+  </style>
+</head>
+<body background="../../static/Images/fon1.jpg" text="black">
+<h4>Лаборатория цвета Смоленского государственного университета изучает принципы гармоничной колористики города.  </h4>
+<p>В этом эксперименте мы хотим узнать, какие цветовые сочетания нравятся лично Вам. </p>
+<p>Исследование займет не более 10 минут. Мы покажем Вам 5 цветовых таблиц. Каждая будет состоять из трех горизонтальных
+	полос разной ширины. Цвет верхней и нижней полос будет закреплен, его Вы изменить не сможете. Ваша задача будет
+	заключаться в том, чтобы с помощью курсора выбрать в предложенной палитре цвет для неокрашенной полосы в центре.
+	Цвет нужно подобрать таким образом, чтобы сочетание всех трех оттенков получилось как можно более гармоничным. </p>
+<p>Если Вы готовы принять участие в исследовании, заполните, пожалуйста, анкету. </p>
+<form method="POST" class="post-form">{% csrf_token %}
+	 <table>
+		 <tr>
+        {{ form }}
+		 </tr>
+		  <tr>
+      	 </tr>
+	  </table>
+	<br><br><br><br>
+	 <p>{{message}}</p>
+	 <p >
+		<button class="t1" type="submit">ПРОДОЛЖИТЬ</image></button>
+	 </p>
+	</form>
+
+<br><br>
+</body>
+</html>
+
