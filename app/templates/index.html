@@ -33,7 +33,30 @@
 }
   </style>
 </head>
-<body background="../../static/Images/fon1.jpg" text="black">
+{% load static %}
+<body background="{% static 'Images/fon1.jpg' %}" text="black">
+<form id='lang_en' action = "{% url 'indexLn' %}"  method='POST'>{% csrf_token %}
+    <input type='hidden' name='language' value='en'/>
+    <a href='#' title='English' onclick="document.getElementById('lang_en').submit()">
+        <img src="{% static 'Images/us1.png' %}"/>
+    </a>
+</form>
+<form id='lang_ru' action = "{% url 'indexLn' %}"  method='POST'>{% csrf_token %}
+  <input type='hidden' name='language' value='ru'/>
+    <a href='#' title='Russian' onclick="document.getElementById('lang_ru').submit()">
+        <img src="{% static 'Images/ru1.png' %}"/>
+    </a>
+</form>
+{% if Lg == "en" %}
+<h4>Research and Educational Center of the Smolensk State University ColorLab is studying the principles of color harmony in urbane environments.</h4>
+<p>In this experiment, we want to find out what color combinations you personally like.</p>
+<p>This study takes about 10 minutes. We will show you 5 color charts. Each chart  consists of three horizontal stripes
+	of different widths. The colors of the top and bottom stripes are fixed and you cannot change them. You will be
+	asked to select a color for the white (uncolored) stripe in the middle. Choose this color so that the whole color
+	combination is as harmonious as possible. </p>
+<p>If you are ready to take part in this study, please, fill out the form below.</p>
+{% endif %}
+{% if Lg == "ru" %}
 <h4>Лаборатория цвета Смоленского государственного университета изучает принципы гармоничной колористики города.  </h4>
 <p>В этом эксперименте мы хотим узнать, какие цветовые сочетания нравятся лично Вам. </p>
 <p>Исследование займет не более 10 минут. Мы покажем Вам 5 цветовых таблиц. Каждая будет состоять из трех горизонтальных
@@ -41,6 +64,7 @@
 	заключаться в том, чтобы с помощью курсора выбрать в предложенной палитре цвет для неокрашенной полосы в центре.
 	Цвет нужно подобрать таким образом, чтобы сочетание всех трех оттенков получилось как можно более гармоничным. </p>
 <p>Если Вы готовы принять участие в исследовании, заполните, пожалуйста, анкету. </p>
+{% endif %}
 <form method="POST" class="post-form">{% csrf_token %}
 	 <table>
 		 <tr>
@@ -52,7 +76,7 @@
 	<br><br><br><br>
 	 <p>{{message}}</p>
 	 <p >
-		<button class="t1" type="submit">ПРОДОЛЖИТЬ</image></button>
+		<button class="t1" type="submit">{{next}}</image></button>
 	 </p>
 	</form>
 

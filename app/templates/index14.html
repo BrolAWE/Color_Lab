@@ -40,16 +40,30 @@
 	<tr >
 		<td width="200">
   <form action = "{% url 'index14' %}" method = "POST" > {% csrf_token %}
+	{% if Lg == "ru" %}
 	<p><b>Какое сочетание цветов Вам нравится больше, слева или справа?</b></p>
-    <p><input name="left" type="radio" value="yes"> слева  </p>
+	<p><input name="left" type="radio" value="yes"> слева  </p>
     <p><input name="left" type="radio" value="no"> справа</p>
+    {% endif %}
+    {% if Lg == "en" %}
+	<p><b>Which color combination do you like better, the left or the right one?</b></p>
+	<p><input name="left" type="radio" value="yes"> left </p>
+    <p><input name="left" type="radio" value="no"> right </p>
+    {% endif %}
 	  <p style="margin-left: 0px">
 		   <p>{{msg}}</p>
-		<button class="t1" type="submit" id = "button">ПРОДОЛЖИТЬ</button>
+		<button class="t1" type="submit" id = "button">{{next}}</button>
 	  </p>
   </form>
 		</td>
-		<td width="860"><div style="float: right;"><h4>Страница 14 из 15</h4></div> </td>
+		<td width="860"><div style="float: right;">
+			{% if Lg == "ru" %}
+			<h4>страница 14 из 15</h4>
+			{% endif %}
+			{% if Lg == "en" %}
+			<h4>page 14 from 15</h4>
+			{% endif %}
+		</div> </td>
 	</tr>
 	<tr>
 		<td width="860">

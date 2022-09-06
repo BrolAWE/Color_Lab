@@ -6,6 +6,7 @@ from django.urls import path
 from . import views
 urlpatterns = [
     path('', views.index, name='index'),
+    path('page1/', views.indexLn, name='indexLn'),
     path('page2/', views.index1, name='index1'),
     path('page3/', views.index2, name='index2'),
     path('page4/', views.index3, name='index3'),
