@@ -1,6 +1,39 @@
 from django import forms
 from .models import Client_Color1
 
+SEX_CHOICES_EN = [
+    ('мужской', 'male'),  # male, female, other
+    ('женский', 'female'),
+    ('другой', 'other')
+]
+
+EDU_CHOICES_EN = [
+    ('да', 'yes'),
+    ('нет', 'no'),
+]
+
+SEX_CHOICES_RU = [
+    ('мужской', 'мужской'),  # male, female, other
+    ('женский', 'женский'),
+    ('другой', 'другой')
+]
+
+EDU_CHOICES_RU = [
+    ('да', 'да'),
+    ('нет', 'нет'),
+]
+
+SEX_CHOICES_ES = [
+    ('мужской', 'masculino'),  # male, female, other
+    ('женский', 'femenino'),
+    ('другой', 'otro')
+]
+
+EDU_CHOICES_ES = [
+    ('да', 'si'),
+    ('нет', 'no'),
+]
+
 
 class Client_ColorForm(forms.ModelForm):
     class Meta:
@@ -24,6 +57,10 @@ class Client_ColorForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+
+        self.fields['Client_sex'].choices = SEX_CHOICES_RU
+        self.fields['Client_edu'].choices = EDU_CHOICES_RU
+
         self.fields['Client_Year'] = forms.IntegerField(max_value=2010, min_value=1940, label='Год Вашего рождения :')
 
 
@@ -36,7 +73,7 @@ class Client_ColorForm_en(forms.ModelForm):
         labels = {
             'Client_Year': ('Year of birth :'), 'Client_sex': ('Gender :'), 'Client_country1': ('Country of birth :'),
             'Client_country2': ('Country of residence :'), 'Client_lang': ('Mother tongue :'),
-            'Client_edu': ('Art Education :'),
+            'Client_edu': ('Art education :'),
             'Client_shade': ('Do you have difficulties seeing certain colours?')
         }
         error_messages = {
@@ -48,6 +85,10 @@ class Client_ColorForm_en(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+
+        self.fields['Client_sex'].choices = SEX_CHOICES_EN
+        self.fields['Client_edu'].choices = SEX_CHOICES_EN
+
         self.fields['Client_Year'] = forms.IntegerField(max_value=2010, min_value=1940, label='Year of birth :')
 
 
@@ -73,4 +114,8 @@ class Client_ColorForm_es(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+
+        self.fields['Client_sex'].choices = SEX_CHOICES_ES
+        self.fields['Client_edu'].choices = SEX_CHOICES_ES
+
         self.fields['Client_Year'] = forms.IntegerField(max_value=2010, min_value=1940, label='Año de nacimiento :')
