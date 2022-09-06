@@ -38,13 +38,19 @@
 <form id='lang_en' action = "{% url 'indexLn' %}"  method='POST'>{% csrf_token %}
     <input type='hidden' name='language' value='en'/>
     <a href='#' title='English' onclick="document.getElementById('lang_en').submit()">
-        <img src="{% static 'Images/us1.png' %}"/>
+        <img src="{% static 'Images/uk.png' %}"/>
     </a>
 </form>
 <form id='lang_ru' action = "{% url 'indexLn' %}"  method='POST'>{% csrf_token %}
   <input type='hidden' name='language' value='ru'/>
     <a href='#' title='Russian' onclick="document.getElementById('lang_ru').submit()">
-        <img src="{% static 'Images/ru1.png' %}"/>
+        <img src="{% static 'Images/ru.png' %}"/>
+    </a>
+</form>
+<form id='lang_es' action = "{% url 'indexLn' %}"  method='POST'>{% csrf_token %}
+  <input type='hidden' name='language' value='es'/>
+    <a href='#' title='Spain' onclick="document.getElementById('lang_es').submit()">
+        <img src="{% static 'Images/es.png' %}"/>
     </a>
 </form>
 {% if Lg == "en" %}
@@ -57,13 +63,20 @@
 <p>If you are ready to take part in this study, please, fill out the form below.</p>
 {% endif %}
 {% if Lg == "ru" %}
-<h4>Лаборатория цвета Смоленского государственного университета изучает принципы гармоничной колористики города.  </h4>
-<p>В этом эксперименте мы хотим узнать, какие цветовые сочетания нравятся лично Вам. </p>
+<h4>Лаборатория цвета Смоленского государственного университета изучает принципы гармоничной колористики города.</h4>
+<p>В этом эксперименте мы хотим узнать, какие цветовые сочетания нравятся лично Вам.</p>
 <p>Исследование займет не более 10 минут. Мы покажем Вам 5 цветовых таблиц. Каждая будет состоять из трех горизонтальных
 	полос разной ширины. Цвет верхней и нижней полос будет закреплен, его Вы изменить не сможете. Ваша задача будет
 	заключаться в том, чтобы с помощью курсора выбрать в предложенной палитре цвет для неокрашенной полосы в центре.
-	Цвет нужно подобрать таким образом, чтобы сочетание всех трех оттенков получилось как можно более гармоничным. </p>
-<p>Если Вы готовы принять участие в исследовании, заполните, пожалуйста, анкету. </p>
+	Цвет нужно подобрать таким образом, чтобы сочетание всех трех оттенков получилось как можно более гармоничным.</p>
+<p>Если Вы готовы принять участие в исследовании, заполните, пожалуйста, анкету.</p>
+{% endif %}
+{% if Lg == "es" %}
+<h4>El ColorLab del Centro de Investigación y Educación de la Universidad Estatal de Smolensk, estudia los principios de la armonía del color en los entornos urbanos.</h4>
+<p>En este experimento, queremos averiguar qué combinaciones de colores te gustan, en forma personal.</p>
+<p>Este estudio dura unos 10 minutos. Te mostraremos 5 cartas de colores. Cada carta consta de tres franjas horizontales de diferente anchura. Los colores de las franjas superior e inferior son fijos y no puedes cambiarlos. Se te pedirá que seleccione un color para la franja blanca (sin color) del centro. Elige este color, para que toda la combinación de colores sea lo más armoniosa posible.
+</p>
+<p>Si estás dispuesto a participar en este estudio, por favor, rellena el siguiente formulario.</p>
 {% endif %}
 <form method="POST" class="post-form">{% csrf_token %}
 	 <table>
