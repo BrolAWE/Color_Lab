@@ -60,6 +60,7 @@ class Client_ColorForm(forms.ModelForm):
 
         self.fields['Client_sex'].choices = SEX_CHOICES_RU
         self.fields['Client_edu'].choices = EDU_CHOICES_RU
+        self.fields['Client_shade'].choices = EDU_CHOICES_RU
 
         self.fields['Client_Year'] = forms.IntegerField(max_value=2010, min_value=1940, label='Год Вашего рождения :')
 
@@ -88,6 +89,7 @@ class Client_ColorForm_en(forms.ModelForm):
 
         self.fields['Client_sex'].choices = SEX_CHOICES_EN
         self.fields['Client_edu'].choices = EDU_CHOICES_EN
+        self.fields['Client_shade'].choices = EDU_CHOICES_EN
 
         self.fields['Client_Year'] = forms.IntegerField(max_value=2010, min_value=1940, label='Year of birth :')
 
@@ -117,5 +119,6 @@ class Client_ColorForm_es(forms.ModelForm):
 
         self.fields['Client_sex'].choices = SEX_CHOICES_ES
         self.fields['Client_edu'].choices = EDU_CHOICES_ES
+        self.fields['Client_shade'].choices = EDU_CHOICES_ES
 
         self.fields['Client_Year'] = forms.IntegerField(max_value=2010, min_value=1940, label='Año de nacimiento :')
