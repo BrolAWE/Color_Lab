@@ -2,39 +2,46 @@ from django import forms
 from .models import Client_Color1
 
 SEX_CHOICES_EN = [
+    ('', ''),
     ('мужской', 'male'),  # male, female, other
     ('женский', 'female'),
     ('другой', 'other')
 ]
 
 EDU_CHOICES_EN = [
+    ('', ''),
     ('да', 'yes'),
     ('нет', 'no'),
 ]
 
 SEX_CHOICES_RU = [
+    ('', ''),
     ('мужской', 'мужской'),  # male, female, other
     ('женский', 'женский'),
     ('другой', 'другой')
 ]
 
 EDU_CHOICES_RU = [
+    ('', ''),
     ('да', 'да'),
     ('нет', 'нет'),
 ]
 
 SEX_CHOICES_ES = [
+    ('', ''),
     ('мужской', 'masculino'),  # male, female, other
     ('женский', 'femenino'),
     ('другой', 'otro')
 ]
 
 EDU_CHOICES_ES = [
+    ('', ''),
     ('да', 'si'),
     ('нет', 'no'),
 ]
 
 COU_CHOICES = [
+    ('', ''),
     ('Algeria', 'Algeria'),
     ('Australia', 'Australia'),
     ('Argentina', 'Argentina'),
