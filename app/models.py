@@ -11,13 +11,59 @@ EDU_CHOICES = [
     ('нет', 'no, нет, no'),
 ]
 
+COU_CHOICES = [
+    ('Algeria', 'Algeria'),
+    ('Australia', 'Australia'),
+    ('Argentina', 'Argentina'),
+    ('Armenia', 'Armenia'),
+    ('Azerbaijan', 'Azerbaijan'),
+    ('Belarus', 'Belarus'),
+    ('Brazil', 'Brazil'),
+    ('Belgium', 'Belgium'),
+    ('Bulgaria', 'Bulgaria'),
+    ('Chile', 'Chile'),
+    ('Czech Republic', 'Czech Republic'),
+    ('China', 'China'),
+    ('Croatia', 'Croatia'),
+    ('Estonia', 'Estonia'),
+    ('Finland', 'Finland'),
+    ('France', 'France'),
+    ('Germany', 'Germany'),
+    ('Italy', 'Italy'),
+    ('India', 'India'),
+    ('Iran', 'Iran'),
+    ('Japan', 'Japan'),
+    ('Korea', 'Korea'),
+    ('Latvia', 'Latvia'),
+    ('Mexico', 'Mexico'),
+    ('Nigeria', 'Nigeria'),
+    ('Namibia', 'Namibia'),
+    ('Poland', 'Poland'),
+    ('Portugal', 'Portugal'),
+    ('Russia', 'Russia'),
+    ('Spain', 'Spain'),
+    ('Saudi Arabia', 'Saudi Arabia'),
+    ('Serbia', 'Serbia'),
+    ('Singapore', 'Singapore'),
+    ('Slovakia', 'Slovakia'),
+    ('Slovenia', 'Slovenia'),
+    ('Sweden', 'Sweden'),
+    ('Switzerland', 'Switzerland'),
+    ('Turkey', 'Turkey'),
+    ('Thailand', 'Thailand'),
+    ('Tunis', 'Tunis'),
+    ('United Kingdom ', 'United Kingdom'),
+    ('USA', 'USA'),
+    ('Other', 'Other'),
+]
+
 
 class Client_Color1(models.Model):
     Client_id = models.AutoField(primary_key=True)
     Client_Year = models.IntegerField(validators=[MinValueValidator(1940), MaxValueValidator(2020)])
     Client_sex = models.CharField(max_length=10, choices=SEX_CHOICES)
-    Client_country1 = models.CharField(max_length=50)
-    Client_country2 = models.CharField(max_length=50)
+    Client_country1 = models.CharField(max_length=50, choices=COU_CHOICES)
+    Client_country2 = models.CharField(max_length=50, choices=COU_CHOICES)
     Client_lang = models.CharField(max_length=50)
     Client_edu = models.CharField(max_length=10, choices=EDU_CHOICES)
     Client_shade = models.CharField(max_length=10, choices=EDU_CHOICES)

@@ -34,6 +34,52 @@ EDU_CHOICES_ES = [
     ('нет', 'no'),
 ]
 
+COU_CHOICES = [
+    ('Algeria', 'Algeria'),
+    ('Australia', 'Australia'),
+    ('Argentina', 'Argentina'),
+    ('Armenia', 'Armenia'),
+    ('Azerbaijan', 'Azerbaijan'),
+    ('Belarus', 'Belarus'),
+    ('Brazil', 'Brazil'),
+    ('Belgium', 'Belgium'),
+    ('Bulgaria', 'Bulgaria'),
+    ('Chile', 'Chile'),
+    ('Czech Republic', 'Czech Republic'),
+    ('China', 'China'),
+    ('Croatia', 'Croatia'),
+    ('Estonia', 'Estonia'),
+    ('Finland', 'Finland'),
+    ('France', 'France'),
+    ('Germany', 'Germany'),
+    ('Italy', 'Italy'),
+    ('India', 'India'),
+    ('Iran', 'Iran'),
+    ('Japan', 'Japan'),
+    ('Korea', 'Korea'),
+    ('Latvia', 'Latvia'),
+    ('Mexico', 'Mexico'),
+    ('Nigeria', 'Nigeria'),
+    ('Namibia', 'Namibia'),
+    ('Poland', 'Poland'),
+    ('Portugal', 'Portugal'),
+    ('Russia', 'Russia'),
+    ('Spain', 'Spain'),
+    ('Saudi Arabia', 'Saudi Arabia'),
+    ('Serbia', 'Serbia'),
+    ('Singapore', 'Singapore'),
+    ('Slovakia', 'Slovakia'),
+    ('Slovenia', 'Slovenia'),
+    ('Sweden', 'Sweden'),
+    ('Switzerland', 'Switzerland'),
+    ('Turkey', 'Turkey'),
+    ('Thailand', 'Thailand'),
+    ('Tunis', 'Tunis'),
+    ('United Kingdom ', 'United Kingdom'),
+    ('USA', 'USA'),
+    ('Other', 'Other'),
+]
+
 
 class Client_ColorForm(forms.ModelForm):
     class Meta:
@@ -61,6 +107,9 @@ class Client_ColorForm(forms.ModelForm):
         self.fields['Client_sex'].choices = SEX_CHOICES_RU
         self.fields['Client_edu'].choices = EDU_CHOICES_RU
         self.fields['Client_shade'].choices = EDU_CHOICES_RU
+
+        self.fields['Client_country1'].choices = COU_CHOICES
+        self.fields['Client_country2'].choices = COU_CHOICES
 
         self.fields['Client_Year'] = forms.IntegerField(max_value=2010, min_value=1940, label='Год Вашего рождения :')
 
@@ -91,6 +140,9 @@ class Client_ColorForm_en(forms.ModelForm):
         self.fields['Client_edu'].choices = EDU_CHOICES_EN
         self.fields['Client_shade'].choices = EDU_CHOICES_EN
 
+        self.fields['Client_country1'].choices = COU_CHOICES
+        self.fields['Client_country2'].choices = COU_CHOICES
+
         self.fields['Client_Year'] = forms.IntegerField(max_value=2010, min_value=1940, label='Year of birth :')
 
 
@@ -120,5 +172,8 @@ class Client_ColorForm_es(forms.ModelForm):
         self.fields['Client_sex'].choices = SEX_CHOICES_ES
         self.fields['Client_edu'].choices = EDU_CHOICES_ES
         self.fields['Client_shade'].choices = EDU_CHOICES_ES
+
+        self.fields['Client_country1'].choices = COU_CHOICES
+        self.fields['Client_country2'].choices = COU_CHOICES
 
         self.fields['Client_Year'] = forms.IntegerField(max_value=2010, min_value=1940, label='Año de nacimiento :')
