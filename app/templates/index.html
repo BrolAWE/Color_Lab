@@ -1,33 +1,24 @@
 {% extends "base/base.html" %}
 {% load static %}
 {% block content %}
-<table>
-    <tr>
-        <td>
-            <form id='lang_en' action="{% url 'indexLn' %}" method='POST'>{% csrf_token %}
-                <input type='hidden' name='language' value='en'/>
-                <a href='#' title='English' onclick="document.getElementById('lang_en').submit()">
-                    <img src="{% static 'Images/uk.png' %}" width="64" height="48"/>
-                </a>
-            </form>
-        </td>
-        <td>
-            <form id='lang_ru' action="{% url 'indexLn' %}" method='POST'>{% csrf_token %}
-                <input type='hidden' name='language' value='ru'/>
-                <a href='#' title='Russian' onclick="document.getElementById('lang_ru').submit()">
-                    <img src="{% static 'Images/ru.png' %}" width="64" height="48"/>
-                </a>
-            </form>
-        </td>
-        <td>
-            <form id='lang_es' action="{% url 'indexLn' %}" method='POST'>{% csrf_token %}
-                <input type='hidden' name='language' value='es'/>
-                <a href='#' title='Spain' onclick="document.getElementById('lang_es').submit()">
-                    <img src="{% static 'Images/es.png' %}" width="64" height="48"/>
-                </a>
-        </td>
-    </tr>
-</table>
+<form id='lang_ru' action="{% url 'indexLn' %}" method='POST'>{% csrf_token %}
+    <input type='hidden' name='language' value='ru'/>
+    <a href='#' title='Russian' onclick="document.getElementById('lang_ru').submit()">
+        Русский
+    </a>
+</form>
+<form id='lang_en' action="{% url 'indexLn' %}" method='POST'>{% csrf_token %}
+    <input type='hidden' name='language' value='en'/>
+    <a href='#' title='English' onclick="document.getElementById('lang_en').submit()">
+        English
+    </a>
+</form>
+<form id='lang_es' action="{% url 'indexLn' %}" method='POST'>{% csrf_token %}
+    <input type='hidden' name='language' value='es'/>
+    <a href='#' title='Spain' onclick="document.getElementById('lang_es').submit()">
+        Español
+    </a>
+</form>
 {% if Lg == "en" %}
 <h4>Research and Educational Center of the Smolensk State University ColorLab is studying the principles of color
     harmony in urbane environments.</h4>
