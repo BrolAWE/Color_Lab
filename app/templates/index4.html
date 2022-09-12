@@ -64,6 +64,10 @@
     color para que toda la combinación de colores sea lo más armoniosa posible. Una vez que hayas seleccionado un color,
     haz clic en "continuar" para pasar a la página siguiente.</p>
 {% endif %}
+{% if Lg == "ar" %}
+<p>من فضلك حدد لون الشريط الأبيض في المنتصف باستخدام عجلة الألوان. أختر لون الشريط بحيث يكون مجموع الألوان بأكملها
+    متناغمة قدر الإمكان. بعد تحديد اللون إضغط على الزر "متابعة" للإنتقال إلى الصفحة التالية.</p>
+{% endif %}
 <table>
     <tr>
         <td width="1250">
@@ -80,6 +84,9 @@
             {% endif %}
             {% if Lg == "es" %}
             <h4>página 4 a 15</h4>
+            {% endif %}
+            {% if Lg == "ar" %}
+            <h4>صفحة 4 من 15 .</h4>
             {% endif %}
             <div class="colorpicker">
                 <div id="colorpicker1"></div>

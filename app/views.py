@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from .forms import Client_ColorForm, Client_ColorForm_en, Client_ColorForm_es
+from .forms import Client_ColorForm, Client_ColorForm_en, Client_ColorForm_es, Client_ColorForm_ar
 from app.models import Client_Color1
 import datetime
 
@@ -29,6 +29,8 @@ def indexLn(request):
                 next = "CONTINUE"
             elif Lg == "es":
                 next = "CONTINUAR"
+            elif Lg == "ar":
+                next = "متابعة"
             else:
                 next = "ПРОДОЛЖИТЬ"
             return render(request, 'index1.html', {'message': msg, 'Lg': Lg, 'next': next})
@@ -46,6 +48,12 @@ def indexLn(request):
                 Lg = 'es'
                 next = "CONTINUAR"
                 msg = 'Después de haber respondido todas las preguntas, clickea "continuar" para ir a la página de selección de colores.'
+            elif request.POST['language'] == 'ar':
+                form = Client_ColorForm_ar()
+                request.session["Lg"] = 'ar'
+                Lg = 'ar'
+                next = "متابعة"
+                msg = 'بعد إجابتك مشكورا على كامل البيانات المطلوبة ، إضغط على الزر "متابعة" للإنتقال إلى صفحة اختيار الألوان.'
             else:
                 form = Client_ColorForm_en()
                 request.session["Lg"] = 'en'
@@ -118,6 +126,8 @@ def index1(request):
             next = "CONTINUE"
         elif Lg == "es":
             next = "CONTINUAR"
+        elif Lg == "ar":
+            next = "متابعة"
         else:
             next = "ПРОДОЛЖИТЬ"
         return render(request, 'index2.html', {'message': msg, 'Lg': Lg, 'next': next})
@@ -153,6 +163,8 @@ def index2(request):
             next = "CONTINUE"
         elif Lg == "es":
             next = "CONTINUAR"
+        elif Lg == "ar":
+            next = "متابعة"
         else:
             next = "ПРОДОЛЖИТЬ"
         return render(request, 'index3.html', {'message': msg, 'Lg': Lg, 'next': next})
@@ -188,6 +200,8 @@ def index3(request):
             next = "CONTINUE"
         elif Lg == "es":
             next = "CONTINUAR"
+        elif Lg == "ar":
+            next = "متابعة"
         else:
             next = "ПРОДОЛЖИТЬ"
         return render(request, 'index4.html', {'message': msg, 'Lg': Lg, 'next': next})
@@ -223,6 +237,8 @@ def index4(request):
             next = "CONTINUE"
         elif Lg == "es":
             next = "CONTINUAR"
+        elif Lg == "ar":
+            next = "متابعة"
         else:
             next = "ПРОДОЛЖИТЬ"
         return render(request, 'index5.html', {'message': msg, 'Lg': Lg, 'next': next})
@@ -264,6 +280,8 @@ def index5(request):
             next = "CONTINUE"
         elif Lg == "es":
             next = "CONTINUAR"
+        elif Lg == "ar":
+            next = "متابعة"
         else:
             next = "ПРОДОЛЖИТЬ"
         return render(request, 'index6.html', {'MyColor': MyColor, 'Lg': Lg, 'next': next})
@@ -290,6 +308,9 @@ def index6(request):
             elif Lg == "es":
                 msg = "No se selecciona ninguna opción. Seleccione la izquierda o la derecha."
                 next = "CONTINUAR"
+            elif Lg == "ar":
+                msg = "لم يتم تحديد أي خيار . حدد اليسار أو اليمين"
+                next = "متابعة"
             else:
                 msg = "Ничего не выбрано. Выберите значение слева/справа"  ##### 4.5.22
                 next = "ПРОДОЛЖИТЬ"
@@ -331,6 +352,8 @@ def index6(request):
             next = "CONTINUE"
         elif Lg == "es":
             next = "CONTINUAR"
+        elif Lg == "ar":
+            next = "متابعة"
         else:
             next = "ПРОДОЛЖИТЬ"
         return render(request, 'index7.html', {'MyColor': MyColor, 'Lg': Lg, 'next': next})
@@ -355,6 +378,9 @@ def index7(request):  # СТРАНИЦА 2 с двумя таблицами
             elif Lg == "es":
                 msg = "No se selecciona ninguna opción. Seleccione la izquierda o la derecha."
                 next = "CONTINUAR"
+            elif Lg == "ar":
+                msg = "لم يتم تحديد أي خيار . حدد اليسار أو اليمين"
+                next = "متابعة"
             else:
                 msg = "Ничего не выбрано. Выберите значение слева/справа"  ##### 4.5.22
                 next = "ПРОДОЛЖИТЬ"
@@ -392,6 +418,8 @@ def index7(request):  # СТРАНИЦА 2 с двумя таблицами
             next = "CONTINUE"
         elif Lg == "es":
             next = "CONTINUAR"
+        elif Lg == "ar":
+            next = "متابعة"
         else:
             next = "ПРОДОЛЖИТЬ"
         return render(request, 'index8.html', {'MyColor': MyColor, 'Lg': Lg, 'next': next})
@@ -416,6 +444,9 @@ def index8(request):  # СТРАНИЦА 3 с двумя таблицами
             elif Lg == "es":
                 msg = "No se selecciona ninguna opción. Seleccione la izquierda o la derecha."
                 next = "CONTINUAR"
+            elif Lg == "ar":
+                msg = "لم يتم تحديد أي خيار . حدد اليسار أو اليمين"
+                next = "متابعة"
             else:
                 msg = "Ничего не выбрано. Выберите значение слева/справа"  ##### 4.5.22
                 next = "ПРОДОЛЖИТЬ"
@@ -453,6 +484,8 @@ def index8(request):  # СТРАНИЦА 3 с двумя таблицами
             next = "CONTINUE"
         elif Lg == "es":
             next = "CONTINUAR"
+        elif Lg == "ar":
+            next = "متابعة"
         else:
             next = "ПРОДОЛЖИТЬ"
         return render(request, 'index9.html', {'MyColor': MyColor, 'Lg': Lg, 'next': next})
@@ -477,6 +510,9 @@ def index9(request):  # СТРАНИЦА 4 с двумя таблицами
             elif Lg == "es":
                 msg = "No se selecciona ninguna opción. Seleccione la izquierda o la derecha."
                 next = "CONTINUAR"
+            elif Lg == "ar":
+                msg = "لم يتم تحديد أي خيار . حدد اليسار أو اليمين"
+                next = "متابعة"
             else:
                 msg = "Ничего не выбрано. Выберите значение слева/справа"  ##### 4.5.22
                 next = "ПРОДОЛЖИТЬ"
@@ -514,6 +550,8 @@ def index9(request):  # СТРАНИЦА 4 с двумя таблицами
             next = "CONTINUE"
         elif Lg == "es":
             next = "CONTINUAR"
+        elif Lg == "ar":
+            next = "متابعة"
         else:
             next = "ПРОДОЛЖИТЬ"
         return render(request, 'index10.html', {'MyColor': MyColor, 'Lg': Lg, 'next': next})
@@ -538,6 +576,9 @@ def index10(request):  # СТРАНИЦА 5 с двумя таблицами
             elif Lg == "es":
                 msg = "No se selecciona ninguna opción. Seleccione la izquierda o la derecha."
                 next = "CONTINUAR"
+            elif Lg == "ar":
+                msg = "لم يتم تحديد أي خيار . حدد اليسار أو اليمين"
+                next = "متابعة"
             else:
                 msg = "Ничего не выбрано. Выберите значение слева/справа"  ##### 4.5.22
                 next = "ПРОДОЛЖИТЬ"
@@ -575,6 +616,8 @@ def index10(request):  # СТРАНИЦА 5 с двумя таблицами
             next = "CONTINUE"
         elif Lg == "es":
             next = "CONTINUAR"
+        elif Lg == "ar":
+            next = "متابعة"
         else:
             next = "ПРОДОЛЖИТЬ"
         return render(request, 'index11.html', {'MyColor': MyColor, 'Lg': Lg, 'next': next})
@@ -599,6 +642,9 @@ def index11(request):  # СТРАНИЦА 6 с двумя таблицами
             elif Lg == "es":
                 msg = "No se selecciona ninguna opción. Seleccione la izquierda o la derecha."
                 next = "CONTINUAR"
+            elif Lg == "ar":
+                msg = "لم يتم تحديد أي خيار . حدد اليسار أو اليمين"
+                next = "متابعة"
             else:
                 msg = "Ничего не выбрано. Выберите значение слева/справа"  ##### 4.5.22
                 next = "ПРОДОЛЖИТЬ"
@@ -636,6 +682,8 @@ def index11(request):  # СТРАНИЦА 6 с двумя таблицами
             next = "CONTINUE"
         elif Lg == "es":
             next = "CONTINUAR"
+        elif Lg == "ar":
+            next = "متابعة"
         else:
             next = "ПРОДОЛЖИТЬ"
         return render(request, 'index12.html', {'MyColor': MyColor, 'Lg': Lg, 'next': next})
@@ -660,6 +708,9 @@ def index12(request):  # СТРАНИЦА 7 с двумя таблицами
             elif Lg == "es":
                 msg = "No se selecciona ninguna opción. Seleccione la izquierda o la derecha."
                 next = "CONTINUAR"
+            elif Lg == "ar":
+                msg = "لم يتم تحديد أي خيار . حدد اليسار أو اليمين"
+                next = "متابعة"
             else:
                 msg = "Ничего не выбрано. Выберите значение слева/справа"  ##### 4.5.22
                 next = "ПРОДОЛЖИТЬ"
@@ -697,6 +748,8 @@ def index12(request):  # СТРАНИЦА 7 с двумя таблицами
             next = "CONTINUE"
         elif Lg == "es":
             next = "CONTINUAR"
+        elif Lg == "ar":
+            next = "متابعة"
         else:
             next = "ПРОДОЛЖИТЬ"
         return render(request, 'index13.html', {'MyColor': MyColor, 'Lg': Lg, 'next': next})
@@ -721,6 +774,9 @@ def index13(request):  # СТРАНИЦА 8 с двумя таблицами
             elif Lg == "es":
                 msg = "No se selecciona ninguna opción. Seleccione la izquierda o la derecha."
                 next = "CONTINUAR"
+            elif Lg == "ar":
+                msg = "لم يتم تحديد أي خيار . حدد اليسار أو اليمين"
+                next = "متابعة"
             else:
                 msg = "Ничего не выбрано. Выберите значение слева/справа"  ##### 4.5.22
                 next = "ПРОДОЛЖИТЬ"
@@ -758,6 +814,8 @@ def index13(request):  # СТРАНИЦА 8 с двумя таблицами
             next = "CONTINUE"
         elif Lg == "es":
             next = "CONTINUAR"
+        elif Lg == "ar":
+            next = "متابعة"
         else:
             next = "ПРОДОЛЖИТЬ"
         return render(request, 'index14.html', {'MyColor': MyColor, 'Lg': Lg, 'next': next})
@@ -782,6 +840,9 @@ def index14(request):  # СТРАНИЦА 9 с двумя таблицами
             elif Lg == "es":
                 msg = "No se selecciona ninguna opción. Seleccione la izquierda o la derecha."
                 next = "CONTINUAR"
+            elif Lg == "ar":
+                msg = "لم يتم تحديد أي خيار . حدد اليسار أو اليمين"
+                next = "متابعة"
             else:
                 msg = "Ничего не выбрано. Выберите значение слева/справа"  ##### 4.5.22
                 next = "ПРОДОЛЖИТЬ"
@@ -819,6 +880,8 @@ def index14(request):  # СТРАНИЦА 9 с двумя таблицами
             next = "CONTINUE"
         elif Lg == "es":
             next = "CONTINUAR"
+        elif Lg == "ar":
+            next = "متابعة"
         else:
             next = "ПРОДОЛЖИТЬ"
         return render(request, 'index15.html', {'MyColor': MyColor, 'Lg': Lg, 'next': next})
@@ -843,6 +906,9 @@ def index15(request):  # СТРАНИЦА 10 с двумя таблицами
             elif Lg == "es":
                 msg = "No se selecciona ninguna opción. Seleccione la izquierda o la derecha."
                 next = "CONTINUAR"
+            elif Lg == "ar":
+                msg = "لم يتم تحديد أي خيار . حدد اليسار أو اليمين"
+                next = "متابعة"
             else:
                 msg = "Ничего не выбрано. Выберите значение слева/справа"  ##### 4.5.22
                 next = "ПРОДОЛЖИТЬ"
@@ -873,6 +939,8 @@ def index15(request):  # СТРАНИЦА 10 с двумя таблицами
             next = "CONTINUE"
         elif Lg == "es":
             next = "CONTINUAR"
+        elif Lg == "ar":
+            next = "متابعة"
         else:
             next = "ПРОДОЛЖИТЬ"
         return render(request, 'indexend.html', {'Lg': Lg, 'next': next})
