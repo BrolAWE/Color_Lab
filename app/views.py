@@ -976,7 +976,7 @@ def export_xls(request):
         ws.write(row_num, col_num, columns[col_num], font_style)  # at 0 row 0 column
     # Sheet body, remaining rows
     font_style = xlwt.XFStyle()
-    rows = Client_Color1.objects.values_list('Client_id', 'Client_Year',
+    rows = Client_Color1.objects.order_by('Client_id').values_list('Client_id', 'Client_Year',
                                              'Client_sex', 'Client_country1', 'Client_country2', 'Client_lang',
                                              'Client_edu', 'Client_shade', 'color1', 'color2', 'color3', 'color4',
                                              'color5',
