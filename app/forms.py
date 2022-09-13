@@ -177,7 +177,7 @@ class Client_ColorForm_es(forms.ModelForm):
             'Client_country1': ('País de nacimiento :'),
             'Client_country2': ('País de residencia :'), 'Client_lang': ('Lengua materna :'),
             'Client_edu': ('Educación artística :'),
-            'Client_shade': ('¿Tienes dificultad para ver ciertos colores? (por ejemplo, si tienes daltonismo)')
+            'Client_shade': ('¿Tienes dificultad para ver ciertos colores (por ejemplo, tienes daltonismo)?')
         }
         error_messages = {
             'Client_name': {
