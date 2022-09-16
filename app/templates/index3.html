@@ -88,6 +88,9 @@
             {% if Lg == "ar" %}
             <h4>صفحة 3 من 15</h4>
             {% endif %}
+            {% if Lg == "cz" %}
+            <h4>stránka 3 až 15</h4>
+            {% endif %}
             <div class="colorpicker">
                 <div id="colorpicker1"></div>
                 <form action="{% url 'index3' %}" method="POST" class="post-form"> {% csrf_token %}

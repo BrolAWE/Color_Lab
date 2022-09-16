@@ -53,6 +53,19 @@ EDU_CHOICES_AR = [
     ('нет', 'لا'),
 ]
 
+SEX_CHOICES_CZ = [
+    ('', ''),
+    ('мужской', 'muž'),  # male, female, other
+    ('женский', 'žena'),
+    ('другой', 'jiné')
+]
+
+EDU_CHOICES_CZ = [
+    ('', ''),
+    ('да', 'ano'),
+    ('нет', 'ne'),
+]
+
 COU_CHOICES = [
     ('', ''),
     ('Algeria', 'Algeria'),
@@ -229,3 +242,35 @@ class Client_ColorForm_ar(forms.ModelForm):
         self.fields['Client_country2'].choices = COU_CHOICES
 
         self.fields['Client_Year'] = forms.IntegerField(max_value=2010, min_value=1940, label='تاريخ الميلاد')
+
+
+class Client_ColorForm_cz(forms.ModelForm):
+    class Meta:
+        model = Client_Color1
+        fields = (
+            'Client_id', 'Client_Year', 'Client_sex', 'Client_country1', 'Client_country2', 'Client_lang', 'Client_edu',
+            'Client_shade')
+        labels = {
+            'Client_Year': ('Rok narození  :'), 'Client_sex': ('Pohlaví :'), 'Client_country1': ('Země, kde jste se narodil/a :'),
+            'Client_country2': ('Země trvalého pobytu :'), 'Client_lang': ('Mateřský jazyk :'),
+            'Client_edu': ('Umělecké vzdělání :'),
+            'Client_shade': ('Máte potíže s vnímáním některých barev?')
+        }
+        error_messages = {
+            'Client_name': {
+                'max_length': ("Value is too long"),
+                'Client_Year': ("Value is too long"),
+            },
+        }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        self.fields['Client_sex'].choices = SEX_CHOICES_CZ
+        self.fields['Client_edu'].choices = EDU_CHOICES_CZ
+        self.fields['Client_shade'].choices = EDU_CHOICES_CZ
+
+        self.fields['Client_country1'].choices = COU_CHOICES
+        self.fields['Client_country2'].choices = COU_CHOICES
+
+        self.fields['Client_Year'] = forms.IntegerField(max_value=2010, min_value=1940, label='Rok narození :')

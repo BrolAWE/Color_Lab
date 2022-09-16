@@ -68,6 +68,11 @@
 <p>من فضلك حدد لون الشريط الأبيض في المنتصف باستخدام عجلة الألوان. أختر لون الشريط بحيث يكون مجموع الألوان بأكملها
     متناغمة قدر الإمكان. بعد تحديد اللون إضغط على الزر "متابعة" للإنتقال إلى الصفحة التالية</p>
 {% endif %}
+{% if Lg == "cz" %}
+<p>Znovu vyberte barvu pro bílý prostřední pruh pomocí palety. Barvu zvolte tak, aby Vám kombinace všech tří pruhů
+    připadala co nejharmoničtější. Až budete se svým výběrem spokojeni, klikněte na "pokračovat" pro přechod na další
+    stránku.</p>
+{% endif %}
 <table>
     <tr>
         <td width="1250">
@@ -87,6 +92,9 @@
             {% endif %}
             {% if Lg == "ar" %}
             <h4>صفحة 2 من 15</h4>
+            {% endif %}
+            {% if Lg == "cz" %}
+            <h4>stránka 2 až 15</h4>
             {% endif %}
             <div class="colorpicker">
                 <div id="colorpicker1"></div>

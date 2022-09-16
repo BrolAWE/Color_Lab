@@ -25,6 +25,12 @@
         العربية
     </a>
 </form>
+<form id='lang_cz' action="{% url 'indexLn' %}" method='POST'>{% csrf_token %}
+    <input type='hidden' name='language' value='cz'/>
+    <a href='#' title='Cz' onclick="document.getElementById('lang_cz').submit()">
+        Czech
+    </a>
+</form>
 {% if Lg == "en" %}
 <h4>Research and Educational Center of the Smolensk State University ColorLab is studying the principles of color
     harmony in urbane environments.</h4>
@@ -63,6 +69,15 @@
     الأبيض في المنتصف. سوف تقوم بإختيار لون لهذا الشريط حتى يكون متناغماً قدر الإمكان مع اللون الذي أعلاه و أسفلة
 </p>
 <p>إذا كنت مستعداً للمشاركة في هذه الدراسة ، نأمل منك تعبئة البيانات التالية</p>
+{% endif %}
+{% if Lg == "cz" %}
+<h4>Laboratoř výzkumu barev zkoumá principy harmonické koloristiky města.</h4>
+<p>V tomto experimentu chceme zjistit, jaké barevné kombinace se Vám osobně líbí.</p>
+<p>Studie nezabere více než 10 minut. Ukážeme vám 5 barevných schémat. Každé se bude skládat ze tří horizontálních pruhů
+    různé šířky. Barva horního a spodního pruhu bude neměnná a Vaším úkolem bude pomocí kurzoru vybrat barvu pro
+    prostřední bílý pruh pomocí palety. Barvu zvolte tak, aby Vám kombinace všech tří odstínů připadala co
+    nejharmoničtější.</p>
+<p>Pokud se chcete studie zúčastnit, vyplňte prosím dotazník.</p>
 {% endif %}
 <form method="POST" class="post-form">{% csrf_token %}
     <table>

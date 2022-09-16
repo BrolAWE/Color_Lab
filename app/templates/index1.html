@@ -88,6 +88,14 @@
     إلى أقصى درجة. بعد تحديد اللون إضغط على الزر "متابعة" للإنتقال إلى الصفحة التالية
 </p>
 {% endif %}
+{% if Lg == "cz" %}
+<p>Vyberte prosím barvu pro bílý prostřední pruh pomocí palety. Barvu zvolte tak, aby Vám kombinace všech tří pruhů
+    připadala co nejharmoničtější.</p>
+<p>Paleta se skládá ze dvou částí. Nejprve pohybem kurzoru v kruhu vyberte odstín. Poté pohybem kurzoru ve vnitřním
+    čtverci upravte jeho jas a sytost.</p>
+<p>Doba výběru není omezena. Můžete hledat správnou možnost, dokud ji nenajdete. Až budete se svým výběrem spokojeni,
+    klikněte na "pokračovat" pro přechod na další stránku.</p>
+{% endif %}
 <table>
     <tr>
         <td width="1250">
@@ -107,6 +115,9 @@
             {% endif %}
             {% if Lg == "ar" %}
             <h4>صفحة 1 من 15</h4>
+            {% endif %}
+            {% if Lg == "cz" %}
+            <h4>stránka 1 až 15</h4>
             {% endif %}
             <div class="colorpicker">
                 <div id="colorpicker1"></div>
