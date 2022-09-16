@@ -21,7 +21,7 @@ def indexLn(request):
             key = client.Client_id
             current_user = Client_Color1.objects.get(pk=key)
             date = datetime.datetime.today()
-            current_user.color1 = date.strftime('%H:%M:%S')
+            current_user.color1 = date.strftime("%m/%d/%Y, %H:%M:%S")
             current_user.save(update_fields=['color1'])
             # конец добавки
             Lg = request.session["Lg"]
@@ -94,7 +94,7 @@ def index(request):
             key = client.Client_id
             current_user = Client_Color1.objects.get(pk=key)
             date = datetime.datetime.today()
-            current_user.color1 = date.strftime('%H:%M:%S')
+            current_user.color1 = date.strftime("%m/%d/%Y, %H:%M:%S")
             current_user.save(update_fields=['color1'])
             # конец добавки
             Lg = "en"
