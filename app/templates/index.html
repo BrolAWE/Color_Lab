@@ -28,7 +28,7 @@
 <form id='lang_cz' action="{% url 'indexLn' %}" method='POST'>{% csrf_token %}
     <input type='hidden' name='language' value='cz'/>
     <a href='#' title='Cz' onclick="document.getElementById('lang_cz').submit()">
-        Czech
+        Čeština
     </a>
 </form>
 {% if Lg == "en" %}
