@@ -67,7 +67,7 @@ class Client_Color1(models.Model):
     Client_lang = models.CharField(max_length=50)
     Client_edu = models.CharField(max_length=10, choices=EDU_CHOICES)
     Client_shade = models.CharField(max_length=10, choices=EDU_CHOICES)
-    color1 = models.CharField(max_length=20)
+    color1 = models.CharField(max_length=50)
     color2 = models.CharField(max_length=20)
     color3 = models.CharField(max_length=20)
     color4 = models.CharField(max_length=20)
