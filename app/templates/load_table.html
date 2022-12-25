@@ -7,7 +7,7 @@
 <body>
 Загрузка таблицы
 <table border="2">
-     <tr>
+    <tr>
         <th>Страна рожд.</th>
         <th>Страна прож.</th>
         <th>Худ.обр.</th>
@@ -15,15 +15,15 @@
         <th>Воспр.цв.</th>
     </tr>
     {% for item in clients %}
-         <tr>
-         <td>{{ item.Client_country1 }}</td>
-         <td>{{ item.Client_country2 }}</td>
-         <td>{{ item.Client_edu }}</td>
-             <td>{{ item.Client_lang }}</td>
-             <td>{{ item.Client_shade }}</td>
-         </tr>
+    <tr>
+        <td>{{ item.Client_country1 }}</td>
+        <td>{{ item.Client_country2 }}</td>
+        <td>{{ item.Client_edu }}</td>
+        <td>{{ item.Client_lang }}</td>
+        <td>{{ item.Client_shade }}</td>
+    </tr>
     {% endfor %}
-    </table>
+</table>
 
 </body>
 </html>
